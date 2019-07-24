@@ -248,8 +248,6 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
         }
         return v
       }, 
-      
-      
 			
 			//Lock Angle
 			LockonAngle:  v => {
@@ -258,8 +256,7 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 				return v
 			},
 			
-			//Targeted Changes
-			
+			//Targeted Changes			
 			Ammo_CustomParameter: v => {
 			
 				if(Stats[sName["BombBullet?"]] === "Yes"){
@@ -346,9 +343,6 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 						bombSpeed.value = +Stats[sName["SecondaryProjectileSpeed"]]
 						bombExplosion.value = +Stats[sName["SecondaryShotAoE"]]
 						bombLife.value = +Stats[sName["SecondaryProjectileLifetime"]]
-
-						 
-					
 					//console.log("Bombing Plan Air Raid specific parameters applied successfuly")
 				}			
 				
@@ -364,14 +358,10 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 						missileSpeed.value = +Stats[sName["SecondaryProjectileSpeed"]]
 						missileSize.value = +Stats[sName["SecondaryProjectileSize"]]
 						missileExplosion.value = +Stats[sName["SecondaryShotAoE"]]
-						
-						
-					
 					//console.log("Target Painted Air Raid specific parameters applied successfuly")
 				}
 				
 				if(Stats[sName["Type"]] === "Auto Turret"){
-					
 						const turretFireRate = v.find(node => node.name === 'Ammo_CustomParameter')
 						const turretAmmoCount = v.find(node => node.name === 'AmmoSize')
 						const turretTracking = v.find(node => node.name === 'TurnSpeed')
@@ -382,21 +372,16 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 						turretTracking.value = +Stats[sName["SecondaryTurnSpeed"]]
 						turretSearchRange.value = +Stats[sName["SecondarySearchRange"]]
 						turretAmmoSpeed.value = +Stats[sName["SecondaryProjectileSpeed"]]
-						
-					
 					//console.log("Turret specific parameters applied successfuly")
 				}
 				
 				if(Stats[sName["Type"]] === "Napalm"){
-					
 						const napalmStats = v.find(node => node.name === 'EmitterParameter')
 						const napalmHitCount = napalmStats.value.find(node => node.name === 'EmitterAmmoCount')
 						const napalmHitInterval = napalmStats.value.find(node => node.name === 'EmitterInterval')
 						napalmHitCount.value = +Stats[sName["SecondaryAmmoCount"]]
 						napalmHitInterval.value = +Stats[sName["SecondaryProjectileInterval"]]
-						return v
-						
-					
+						return v	
 				}
 				
 				if(Stats[sName["Type"]] === "Target Painter"){
@@ -405,12 +390,9 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 						const lockRange = v[1].value
 						lockSpeed.value = +Stats[sName["SecondaryLockTime"]]
 						lockRange.value = +Stats[sName["SecondaryLockRange"]]
-						
-					
 				}
 				
 				if(Stats[sName["Type"]] === "Lock On Launcher"){
-						
 						const misAcel = v[4]
 						const misTurn = v[5]
 						const misMaxSpeed = v[6]
@@ -421,11 +403,9 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 						misMaxSpeed.value = +Stats[sName["SecondaryProjectileSpeed"]]
 						misIgniteDelay.value = +Stats[sName["SecondaryEngineIgniteDelay"]]
 						misFlyStraight.value = +Stats[sName["SecondaryFlyStraightTime"]]
-						
 				}	
 				
 				if(Stats[sName["Type"]] === "Homing Laser"){
-						
 						const laserAcel = v[3]
 						const laserTurn = v[4]
 						const laserMaxSpeed = v[5]
@@ -434,11 +414,9 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 						laserTurn.value = +Stats[sName["SecondaryTurnSpeed"]]
 						laserMaxSpeed.value = +Stats[sName["SecondaryProjectileSpeed"]]
 						laserFlyStraight.value = +Stats[sName["SecondaryFlyStraightTime"]]
-						
         }
         
         if(Stats[sName["Type"]] === "Energy Cluster"){
-
             const spreadAngle = v[2]
             const spreadType = v[3]
             const fireCount = v[5].value[2]
@@ -453,12 +431,10 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
             fireInterval.value = Stats[sName["SecondaryProjectileInterval"]]-1
             ammoSpeed.value = +Stats[sName["SecondaryProjectileSpeed"]]
             shotAoE.value = +Stats[sName["SecondaryShotAoE"]]
-            ammoLifetime.value = +Stats[sName["SecondaryProjectileLifetime"]]
-  
+            ammoLifetime.value = +Stats[sName["SecondaryProjectileLifetime"]]  
         }
 				
 				// if(Stats[sName["Type"]] === "Lightning"){
-				
 					// const lightNoise = v[0].value
 					// const lightRandVel = v[1].value
 					// const lightCurve = v[2].value
@@ -467,11 +443,11 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
 					// lightRandVel.value = 0
 					// lightCurve.value = 0
 					// lightMod.value = 1
-				
 				// }
 				
 				return v
       },
+
       custom_parameter: v => {
 
         if(Stats[sName["Type"]] === "CC Piercer"){
@@ -518,7 +494,7 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
               a3ammoLifeMult.value = +Stats[sName["AttackThreeAmmoLifeMult"]]
             }
 
-          }
+        }
   
         if(Stats[sName["Type"]] === "Spine Driver"){
 
@@ -612,6 +588,7 @@ for(let i = 0; i < parsedStats.data.length || runOnce === false; i++){
               a3fireSpread.value = +Stats[sName["AttackThreeFireSpread"]]
             }
         }
+        
         return v
       }
 			
